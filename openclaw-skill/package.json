@@ -1,0 +1,33 @@
+{
+  "name": "@letsping/openclaw-skill",
+  "version": "1.0.0",
+  "description": "LetsPing human-in-the-loop sudo skill for OpenClaw agents",
+  "type": "module",
+  "main": "index.ts",
+  "types": "index.ts",
+  "scripts": {
+    "check": "tsc --noEmit",
+    "test": "echo \"Add tests here (e.g., vitest)\" && exit 0"
+  },
+  "keywords": [
+    "openclaw",
+    "skill",
+    "hitl",
+    "sudo",
+    "letsping"
+  ],
+  "author": "LetsPing Team",
+  "license": "MIT",
+  "dependencies": {
+    "@sinclair/typebox": "^0.32.35",
+    "@supabase/supabase-js": "^2.45.4"
+  },
+  "devDependencies": {
+    "@types/node": "^22.7.4",
+    "typescript": "^5.6.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/CordiaLabs/openclaw-skill.git"
+  }
+}
