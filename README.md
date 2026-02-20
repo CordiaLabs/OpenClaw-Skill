@@ -11,7 +11,7 @@ Payloads are encrypted client-side using AES-GCM with the pairing secret. The re
 Clone into your OpenClaw workspace:
 
 ```bash
-git clone https://github.com/letsping/openclaw-skill ~/.openclaw/workspace/skills/letsping
+git clone https://github.com/CordiaLabs/OpenClaw-Skill.git ~/.openclaw/workspace/skills/letsping
 ```
 
 Install dependencies:
@@ -33,8 +33,6 @@ Add to `~/.openclaw/openclaw.json`:
     "entries": {
       "letsping": {
         "env": {
-          "SUPABASE_URL": "https://tqphlqmmamdjoufqnnka.supabase.co",
-          "SUPABASE_ANON_KEY": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InRxcGhscW1tYW1kam91ZnFubmthIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjkxMjIzNjksImV4cCI6MjA4NDY5ODM2OX0.N3EU5ovNeeh6pkJsi_emHuMFm5vAguC3qR0S4Qq5K14",
           "LETS_PING_SECRET": "lp_live_..."
         }
       }
@@ -42,6 +40,8 @@ Add to `~/.openclaw/openclaw.json`:
   }
 }
 ```
+
+*Note: The Supabase URL and Key are pre-configured for LetsPing. You can override them with `LETSPING_SUPABASE_URL` and `LETSPING_SUPABASE_ANON_KEY` for self-hosting.*
 
 Obtain `LETS_PING_SECRET` by pairing at https://letsping.co/openclaw/pair.
 
@@ -97,6 +97,6 @@ Default timeout: 10 minutes.
 - No notifications: Verify pairing and browser permissions.
 - Timeout errors: Agent should handle gracefully.
 
-Issues/PRs: https://github.com/cordialabs/openclaw-skill
+Issues/PRs: https://github.com/CordiaLabs/OpenClaw-Skill
 
 https://letsping.co
