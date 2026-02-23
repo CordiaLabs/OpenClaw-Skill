@@ -1,7 +1,7 @@
 {
   "name": "@letsping/openclaw-skill",
-  "version": "0.1.2",
-  "description": "LetsPing human-in-the-loop sudo skill for OpenClaw agents. Adds E2EE approval workflows to autonomous agents.",
+  "version": "0.1.5",
+  "description": "LetsPing Behavioral Shield & HITL Skill for OpenClaw Agents.",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "files": [
@@ -29,7 +29,7 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/CordiaLabs/OpenClaw-Skill.git"
+    "url": "https://github.com/CordiaLabs/openclaw-skill.git"
   },
   "publishConfig": {
     "access": "public"
@@ -37,7 +37,7 @@
   "dependencies": {
     "@sinclair/typebox": "^0.32.35",
     "@supabase/supabase-js": "^2.45.4",
-    "@letsping/sdk": "^0.1.2"
+    "@letsping/sdk": "0.1.5"
   },
   "devDependencies": {
     "@types/node": "^22.7.4",

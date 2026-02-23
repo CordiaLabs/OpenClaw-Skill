@@ -1,8 +1,8 @@
 # LetsPing OpenClaw Skill
 
-Human-in-the-loop approval tool for OpenClaw agents.
+**Behavioral Shield** & Human-in-the-loop approval tool for OpenClaw agents.
 
-The skill adds `letsping_ask(tool_name, args_json, risk_reason)`, which pauses execution of high-risk actions until a human approves, rejects, or edits the payload via the LetsPing dashboard.
+The skill adds `letsping_ask(tool_name, args_json, risk_reason)`, which intercepts execution of high-risk actions, triggering the Behavioral Shield anomaly detector or parking the state until a human approves, rejects, or edits the payload via the LetsPing dashboard.
 
 Payloads are encrypted client-side using AES-GCM with the pairing secret. The relay server and database store only ciphertext.
 
@@ -11,7 +11,7 @@ Payloads are encrypted client-side using AES-GCM with the pairing secret. The re
 Clone into your OpenClaw workspace:
 
 ```bash
-git clone https://github.com/CordiaLabs/OpenClaw-Skill.git ~/.openclaw/workspace/skills/letsping
+git clone https://github.com/cordialabs/openclaw-skill.git ~/.openclaw/workspace/skills/letsping
 ```
 
 Install dependencies:
@@ -97,6 +97,6 @@ Default timeout: 10 minutes.
 - No notifications: Verify pairing and browser permissions.
 - Timeout errors: Agent should handle gracefully.
 
-Issues/PRs: https://github.com/CordiaLabs/OpenClaw-Skill
+Issues/PRs: https://github.com/cordialabs/openclaw-skill
 
 https://letsping.co
