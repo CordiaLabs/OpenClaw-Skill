@@ -11,7 +11,7 @@ metadata:
 
 ### Usage
 
-This skill provides the `letsping_ask` tool, a secure escalation point for high risk actions. The agent calls it, blocks until your approval/patch/reject via the LetsPing PWA, then resumes with the authorized payload.
+This skill provides the `letsping_ask` tool, a secure escalation point for high risk actions. The agent calls it, blocks until your approval/patch/reject via the LetsPing PWA, then resumes with the **authorized payload only**.
 
 **Critical**: Use frontier models (e.g., Claude Opus, GPT-4o or better) to minimize prompt bypass risk. Smaller models are vulnerable to drift/injection.
 
@@ -32,7 +32,7 @@ When escalating:
 - risk_reason: Clear, concise justification (e.g., "Potential file deletion")
 
 After the call returns:
-- If APPROVED: Use **ONLY** the authorized_payload (patched if edited)
+- If APPROVED: Use **ONLY** the `executed_payload` / authorized payload (patched if edited)
 - If REJECTED or TIMEOUT: Abort the action, retry with safer plan, or ask user for guidance
 
 Few-shot examples:
