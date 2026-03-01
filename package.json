@@ -1,6 +1,6 @@
 {
   "name": "@letsping/openclaw-skill",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "LetsPing Behavioral Shield & HITL Skill for OpenClaw Agents.",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -26,7 +26,6 @@
     "human-in-the-loop"
   ],
   "author": "LetsPing Team",
-  "license": "MIT",
   "repository": {
     "type": "git",
     "url": "https://github.com/CordiaLabs/openclaw-skill.git"
@@ -37,7 +36,7 @@
   "dependencies": {
     "@sinclair/typebox": "^0.32.35",
     "@supabase/supabase-js": "^2.45.4",
-    "@letsping/sdk": "0.2.0"
+    "@letsping/sdk": "0.3.0"
   },
   "devDependencies": {
     "@types/node": "^22.7.4",

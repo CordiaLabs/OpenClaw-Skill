@@ -1,8 +1,8 @@
-# LetsPing OpenClaw Skill
+# LetsPing OpenClaw Adapter
 
-**Behavioral Shield** & Human-in-the-loop approval tool for OpenClaw agents.
+OpenClaw integration for LetsPing Agent Credentials & Behavioral Firewall.
 
-The skill adds `letsping_ask(tool_name, args_json, risk_reason)`, which intercepts execution of high-risk actions, triggering the Behavioral Shield anomaly detector or parking the state until a human approves, rejects, or edits the payload via the LetsPing dashboard.
+This package provides a `letsping_ask(tool_name, args_json, risk_reason)` skill for OpenClaw agents. It routes high-risk actions through LetsPing’s firewall and (optionally) human-in-the-loop console using the same agent identity and guardrail model as other frameworks (LangGraph, CrewAI, Vercel AI SDK, custom Python). OpenClaw is just one adapter on top of LetsPing’s agent-first architecture.
 
 Payloads are encrypted client-side using AES-GCM with the pairing secret. The relay server and database store only ciphertext.
 
@@ -11,7 +11,7 @@ Payloads are encrypted client-side using AES-GCM with the pairing secret. The re
 Clone into your OpenClaw workspace:
 
 ```bash
-git clone https://github.com/cordialabs/openclaw-skill.git ~/.openclaw/workspace/skills/letsping
+git clone https://github.com/CordiaLabs/openclaw-skill ~/.openclaw/workspace/skills/letsping
 ```
 
 Install dependencies:
@@ -43,7 +43,7 @@ Add to `~/.openclaw/openclaw.json`:
 
 *Note: The Supabase URL and Key are pre-configured for LetsPing. You can override them with `LETSPING_SUPABASE_URL` and `LETSPING_SUPABASE_ANON_KEY` for self-hosting.*
 
-Obtain `LETS_PING_SECRET` by pairing at https://letsping.co/openclaw/pair.
+Obtain `LETS_PING_SECRET` by pairing at https://letsping.co/openclaw/pair, or by using LetsPing’s Agent Credentials API to provision a dedicated agent key for your OpenClaw gateway.
 
 ## Usage
 
@@ -97,6 +97,6 @@ Default timeout: 10 minutes.
 - No notifications: Verify pairing and browser permissions.
 - Timeout errors: Agent should handle gracefully.
 
-Issues/PRs: https://github.com/cordialabs/openclaw-skill
+Issues/PRs: https://github.com/CordiaLabs/openclaw-skill
 
 https://letsping.co
