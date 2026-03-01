@@ -1,6 +1,6 @@
 {
   "name": "@letsping/openclaw-skill",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "description": "LetsPing Behavioral Shield & HITL Skill for OpenClaw Agents.",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -34,9 +34,9 @@
     "access": "public"
   },
   "dependencies": {
+    "@letsping/sdk": "^0.3.2",
     "@sinclair/typebox": "^0.32.35",
-    "@supabase/supabase-js": "^2.45.4",
-    "@letsping/sdk": "0.3.0"
+    "@supabase/supabase-js": "^2.45.4"
   },
   "devDependencies": {
     "@types/node": "^22.7.4",
