@@ -1,8 +1,8 @@
 # LetsPing OpenClaw Adapter
 
-OpenClaw integration for LetsPing Agent Credentials & Behavioral Firewall.
+OpenClaw skill that sends high risk tool calls through LetsPing for human approval.
 
-This package provides a `letsping_ask(tool_name, args_json, risk_reason)` skill for OpenClaw agents. It routes high-risk actions through LetsPing’s firewall and (optionally) human-in-the-loop console using the same agent identity and guardrail model as other frameworks (LangGraph, CrewAI, Vercel AI SDK, custom Python). OpenClaw is just one adapter on top of LetsPing’s agent-first architecture.
+This package provides a `letsping_ask(tool_name, args_json, risk_reason)` skill for OpenClaw agents. It routes high risk actions through LetsPing so a human can approve, reject, or patch the payload before the agent proceeds.
 
 Payloads are encrypted client-side using AES-GCM with the pairing secret. The relay server and database store only ciphertext.
 
@@ -73,13 +73,13 @@ Example:
 letsping_ask(tool_name: "vercel_deploy", args_json: "{\"project\":\"my-app\",\"env\":\"production\",\"force\":true}", risk_reason: "Production deployment with force flag")
 ```
 
-## Security Model
+## Security model
 
 Payloads are encrypted on the agent using AES-GCM derived from `LETS_PING_SECRET`. Only ciphertext is sent to the relay and stored in Supabase. Decryption occurs solely on paired devices using the same secret from local storage.
 
 The relay cannot read payloads.
 
-## How It Works
+## How it works
 
 1. Agent calls `letsping_ask` for a high risk action.
 2. Skill encrypts payload locally and sends ciphertext to relay.
@@ -100,3 +100,9 @@ Default timeout: 10 minutes.
 Issues/PRs: https://github.com/CordiaLabs/openclaw-skill
 
 https://letsping.co
+
+## When you should not use this
+
+- You do not use OpenClaw. In that case prefer the core SDKs or other framework adapters.
+- You want LetsPing to replace OpenClaw's own permissions or user auth. This skill only governs specific tool calls, it does not manage identities inside OpenClaw.
+- You need full prompt logging. The skill focuses on high risk actions, and payloads are encrypted end to end.
